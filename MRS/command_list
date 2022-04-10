@@ -1,0 +1,7 @@
+python D:\COMPUTER\Python\MRS\MRS\manage.py makemigrations user
+python D:\COMPUTER\Python\MRS\MRS\manage.py sqlmigrate user 0001
+python D:\COMPUTER\Python\MRS\MRS\manage.py migrate
+//进行迁移
+python D:\COMPUTER\Python\MRS\MRS\manage.py runserver
+python D:\COMPUTER\Python\MRS\MRS\manage.py startapp XXX
+//创建名为xxx的软件

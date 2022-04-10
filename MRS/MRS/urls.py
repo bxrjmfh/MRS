@@ -27,4 +27,7 @@ urlpatterns = [
 
     # 验证码
     path('captcha/', include('captcha.urls')),
+
+    # 注册页面
+    path('account/',include('user.urls'))
 ]

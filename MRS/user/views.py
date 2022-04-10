@@ -14,6 +14,12 @@ def hash_code(s, salt='mysite'):  # 加点“盐”
 
 def index(request):
     return render(request, 'index.html')
+# def index(request):
+#     username = request.GET.get("username")
+#     if username:
+#         return render(request, "index.html")
+#     else:
+#         return redirect("/login/")
 
 
 def user_info(request):
@@ -23,8 +29,8 @@ def user_info(request):
 def login(request):
     # 通过下面的if语句，我们不允许重复登录：
     # 默认返回的是False
-    if request.session.get('is_login', None):
-        return redirect('user:user_info')
+    # if request.session.get('is_login', None):
+    #     return redirect('user:user_info')
 
     if request.method == "POST":
         login_form = UserForm(request.POST)
