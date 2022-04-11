@@ -17,7 +17,7 @@
     </h2>
     <p class="person">导演：{% for di in movie.directors.all %}{{ di  }},{% endfor %}</p>
     <p class="person">演员：{% for ac in movie.actors.all %}{{ ac  }},{% endfor %}</p>
-    <p class=""
+
     {{ movie.description|linebreaks }}
   </div>
 {% endblock %}
