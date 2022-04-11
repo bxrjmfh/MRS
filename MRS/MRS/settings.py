@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'user',
     'bootstrap4',
     'captcha',
+    'movie'
 ]
 
 MIDDLEWARE = [

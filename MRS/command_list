@@ -5,3 +5,5 @@ python D:\COMPUTER\Python\MRS\MRS\manage.py migrate
 python D:\COMPUTER\Python\MRS\MRS\manage.py runserver
 python D:\COMPUTER\Python\MRS\MRS\manage.py startapp XXX
 //创建名为xxx的软件
+//添加app之后需要进行指定迁移
+python D:\COMPUTER\Python\MRS\MRS\manage.py makemigrations
