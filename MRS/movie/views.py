@@ -16,5 +16,8 @@ def movie_list(request, category_slug=None):
                    'categories': categories,
                    'movies': movies})
 
-def movie_detail(request):
-    return render(request)
+def movie_detail(request,id,slug):
+    movie = get_object_or_404(Movie,id=id,slug=slug)
+    directors = movie.directors.all()
+    return render(request,'movie/movie/detail.html',
+                  {'movie':movie})

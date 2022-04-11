@@ -26,13 +26,16 @@ class Category(models.Model):
         return reverse('movie:movie_list_by_category',
                        args=[self.slug])
     # 在url中添加相应的标签。
-    #     todo： 添加标签。path('<slug:category_slug>/', views.product_list, name='product_list_by_category'),
 
 class Director(models.Model):
     name = models.CharField(max_length=30)
+    def __str__(self):
+        return self.name
 
 class Actor(models.Model):
     name = models.CharField(max_length=30)
+    def __str__(self):
+        return self.name
 
 class Movie(models.Model):
     category = models.ForeignKey(Category,
@@ -69,4 +72,3 @@ class Movie(models.Model):
         return reverse('movie:movie_detail',
                        args=[self.id, self.slug])
 
-    #     todo： 添加标签。path('<slug:category_slug>/', views.product_list, name='product_list_by_category'),

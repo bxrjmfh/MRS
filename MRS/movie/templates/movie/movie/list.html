@@ -6,11 +6,9 @@
 {% endblock %}
 
 {% block content %}
-{#todo：block的作用#}
     <div id="sidebar">
     <h3>分类</h3>
     <ul>
-{#    todo:搞清楚逻辑#}
       <li {% if not category %}class="selected"{% endif %}>
         <a href="{% url "movie:movie_list" %}">All</a>
       </li>

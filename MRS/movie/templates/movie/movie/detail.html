@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "movie/base.html" %}
+{% load static %}
 
-</body>
-</html>
+{% block title %}
+  {{ movie.name }}
+{% endblock %}
+
+{% block content %}
+  <div class="product-detail">
+    <img src="{% if movie.image %}{{ movie.image.url }}{% else %}
+    {% static "img/no_image.png" %}{% endif %}">
+    <h1>{{ movie.name }}</h1>
+    <h2>
+      <a href="{{ movie.category.get_absolute_url }}">
+        {{ movie.category }}
+      </a>
+    </h2>
+    <p class="person">导演：{% for di in movie.directors.all %}{{ di  }},{% endfor %}</p>
+    <p class="person">演员：{% for ac in movie.actors.all %}{{ ac  }},{% endfor %}</p>
+    <p class=""
+    {{ movie.description|linebreaks }}
+  </div>
+{% endblock %}
