@@ -9,6 +9,7 @@
  {% if request.session.is_login %}
  <h1>你好,{{ request.session.user_name }}！欢迎回来！</h1>
      <p>搞错了？<a href="account/login">登录</a>或<a href="account/register">注册</a></p>
+     <p><a href="movie/">看看电影？</a></p>
  {% else %}
  <h1>你尚未登录，只能访问公开内容！</h1>
      <p>新用户？<a href="account/register">注册</a></p>

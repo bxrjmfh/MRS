@@ -1,0 +1,26 @@
+{% load static %}
+{#加载资源目录#}
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}电影列表{% endblock %}</title>
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
+    {#  连接到基本的样式表#}
+    </head>
+    <body>
+        <div id="header">
+        <a href="/" class="logo">电影列表</a>
+        </div>
+        <div id="subheader">
+            <div class="cart">
+              改为你的电影列表
+            </div>
+        </div>
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
