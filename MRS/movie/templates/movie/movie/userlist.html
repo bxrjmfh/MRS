@@ -1,0 +1,35 @@
+{% extends "movie/base.html" %}
+{% load static %}
+
+{% block title %}
+  我的电影
+{% endblock %}
+
+{% block content %}
+    <div id="sidebar">
+    <h3>分类</h3>
+    <ul>
+      <li>
+        <a href="{% url "movie:movie_list" %}">All</a>
+      </li>
+      {% for c in categories %}
+        <li>
+          <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div id="main" class="movie-list">
+    <h1>我的电影列表</h1>
+    {% for movie in movies %}
+      <div class="item">
+        <a href="{{ movie.get_absolute_url }}">
+          <img src="{% if movie.image %}{{ movie.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+        </a>
+        <a href="{{ movie.get_absolute_url }}">{{ movie.name }}</a>
+        <br>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
